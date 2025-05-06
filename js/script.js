@@ -2,6 +2,15 @@
 const mario = document.querySelector('img.mario'); 
 const cano = document.querySelector('img.tubo');
 
+// gerando botão de "iniciar" o jogo
+const menuInicial = document.querySelector('#menuInicial');
+const gameBoard = document.querySelector('#game-board');
+const btnStart = document.querySelector('.start'); // coletando o botão de "iniciar"
+btnStart.addEventListener('click', () => { // gerando um evento de click no botão de "iniciar"
+  menuInicial.style.display = 'none'; // ao clicar, o menu inicial será ocultado
+  gameBoard.style.display = 'block'; // e o jogo será mostrado
+});
+
 // geração da função que fará com que o Mario pule:
 const pular = () => { // gerando com uma arrow function
   mario.classList.add('pulo'); // será adicionado ao mário a class 'pulo', que contém a animação de pulo

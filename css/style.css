@@ -2,54 +2,111 @@
 
 /* conf gerais */
 * {
-  margin: 0; 
+  margin: 0;
   padding: 0;
-  box-sizing: border-box; /* para calcular a dimensão do elemento com base nas bordas */
+  box-sizing: border-box;
+  /* para calcular a dimensão do elemento com base nas bordas */
 }
 
 body {
   background-color: #171717;
 }
 
+#menuInicial {
+  position: absolute;
+  /* para que os itens não "esbarrem" entre si */
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  /* para que a div ocupe toda a tela */
+
+  background-color: #00000050;
+  /* cor de fundo da tela inicial */
+}
+
+.button {
+  background-color: #ddd;
+  /* cor de fundo do botão */
+  color: #171717;
+  /* cor do texto do botão */
+  border-radius: 10px;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.start {
+  width: 200px;
+  height: 70px;
+
+  font-size: 2em;
+
+  margin: 20px;
+}
+
+.credits {
+  width: 150px;
+  font-size: 1em;
+}
+
 /* conf da tela do jogo */
 #game-board {
+  display: none;
+
   background-image: linear-gradient(#00f7ff, rgb(200, 246, 255));
   border-bottom: 15px solid #00ac00;
   width: 95%;
   height: 500px;
   margin: auto;
-  position: relative; /* para que os itens respeitem a delimitação do quadro */
-  overflow: hidden; /* para que todos os elementos que saiam de dentro da div desapareçam */
+  position: relative;
+  /* para que os itens respeitem a delimitação do quadro */
+  overflow: hidden;
+  /* para que todos os elementos que saiam de dentro da div desapareçam */
 }
 
 .nuvens {
-  position: absolute; /* para que os itens não "esbarrem" entre si */
+  position: absolute;
+  /* para que os itens não "esbarrem" entre si */
   width: 400px;
-  animation: movNuvens 20s infinite linear; /* definindo a animação das nuvens, com a animação 'movNuvens' gerada na última parte do código, fazendo com que ela demore 20s para ser reproduzida, rodando infinitamente de forma linear */
+  animation: movNuvens 20s infinite linear;
+  /* definindo a animação das nuvens, com a animação 'movNuvens' gerada na última parte do código, fazendo com que ela demore 20s para ser reproduzida, rodando infinitamente de forma linear */
 }
 
 /* conf do tubo */
 .tubo {
-  position: absolute; /* para que os itens não "esbarrem" entre si */
+  position: absolute;
+  /* para que os itens não "esbarrem" entre si */
   bottom: 0;
   width: 80px;
   bottom: -15px;
-  animation: mov-tubo 1.2s infinite linear; /* definindo a animação dos tubos, com a animação 'mov-tubo' gerada na última parte do código, fazendo com que ela demore 1.2s para ser reproduzida, rodando infinitamente de forma linear */
+  animation: mov-tubo 1.2s infinite linear;
+  /* definindo a animação dos tubos, com a animação 'mov-tubo' gerada na última parte do código, fazendo com que ela demore 1.2s para ser reproduzida, rodando infinitamente de forma linear */
 }
 
 /* conf do mario */
 .mario {
-  position: absolute; /* para que os itens não "esbarrem" entre si */
+  position: absolute;
+  /* para que os itens não "esbarrem" entre si */
   left: 30px;
   width: 150px;
   bottom: -5px;
 }
 
-.pulo { /* class 'pulo' gerada no "seco" (sem estar incluida inicialmente em nenhum personagem), reproduzindo a animação de pulo do Mário, que, assim que receber a ordem do JS, irá ser implementada no elemento referente ao personagem principal */
-  animation: pular 0.5s ease-out; /* definindo a animação de pulo, criada abaixo, rodando em 0.5s com um efeito de ease-out */
+.pulo {
+  /* class 'pulo' gerada no "seco" (sem estar incluida inicialmente em nenhum personagem), reproduzindo a animação de pulo do Mário, que, assim que receber a ordem do JS, irá ser implementada no elemento referente ao personagem principal */
+  animation: pular 0.5s ease-out;
+  /* definindo a animação de pulo, criada abaixo, rodando em 0.5s com um efeito de ease-out */
 }
 
-@keyframes mov-tubo { /* keyframe referente a criação da animação do tubo */
+@keyframes mov-tubo {
+
+  /* keyframe referente a criação da animação do tubo */
   from {
     right: -80px;
   }
@@ -57,10 +114,13 @@ body {
   to {
     right: 100%;
   }
+
   /* o que está acontecendo aqui: a animação fará com que o objeto vá de um ponto até outro, neste caso do right -80 até 100% */
 }
 
-@keyframes pular { /* keyframe referente a criação da animação do tubo */
+@keyframes pular {
+
+  /* keyframe referente a criação da animação do tubo */
   0% {
     bottom: -5px;
   }
@@ -80,10 +140,13 @@ body {
   100% {
     bottom: -5px;
   }
+
   /* o que está acontecendo aqui: a animação terá algumas etapas dentro de si, sendo que quando estiver com 0% da duração o bottom será de -5, quando estiver em 40% será de 150 bem como nos 50 e 60% (para criar uma sensação de "flutuar" ao pulo do personagem), e quando estiver completamente reproduzida (100%) irá retornar a sua posição inicial (neste caso -5) */
 }
 
-@keyframes movNuvens { /* keyframe referente a criação da animação das nuvens */
+@keyframes movNuvens {
+
+  /* keyframe referente a criação da animação das nuvens */
   from {
     right: -400px;
   }
@@ -91,5 +154,6 @@ body {
   to {
     right: 100%;
   }
+
   /* o que está acontecendo aqui: a animação fará com que o objeto vá de um ponto até outro, neste caso do right -400 até 100% */
 }

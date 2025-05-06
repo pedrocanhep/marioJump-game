@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/icon-big.png" type="png">
-  <title>Mário Jump</title>
-  <!-- integrando CSS externo -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/icon-big.png" type="png" />
+    <title>Mário Jump</title>
+    <!-- integrando CSS externo -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
+  <body>
+    <div id="menuInicial">
+      <button type="button" name="Botão inicio do jogo" class="button start">
+        Iniciar
+      </button>
+      <button class="button credits">Créditos</button>
+    </div>
 
-  <div id="game-board">
-    <!-- adicionando os elementos do jogo -->
-    <img src="img/nuvens.png" alt="nuvens" class="nuvens"> 
-    <img src="img/mario.gif" alt="mario" class="mario">
-    <img src="img/tubo.png" alt="tubo" class="tubo">
+    <div id="game-board">
+      <!-- adicionando os elementos do jogo -->
+      <img src="img/nuvens.png" alt="nuvens" class="nuvens" />
+      <img src="img/mario.gif" alt="mario" class="mario" />
+      <img src="img/tubo.png" alt="tubo" class="tubo" />
+    </div>
 
-  </div>
-
-  <!-- integrando JS externo -->
-  <script src="js/script.js"></script>
-</body>
-
+    <!-- integrando JS externo -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
