@@ -11,10 +11,13 @@
 
   <body>
     <div id="menuInicial">
-      <button type="button" name="Botão inicio do jogo" class="button start">
-        Iniciar
+      <button type="button" class="button start">Iniciar</button>
+      <button
+        class="button credits"
+        onclick="window.location.href='https://github.com/pedrocanhep'"
+      >
+        Créditos
       </button>
-      <button class="button credits">Créditos</button>
     </div>
 
     <div id="game-board">
@@ -22,6 +25,8 @@
       <img src="img/nuvens.png" alt="nuvens" class="nuvens" />
       <img src="img/mario.gif" alt="mario" class="mario" />
       <img src="img/tubo.png" alt="tubo" class="tubo" />
+
+      <button type="button" id="restart">Reiniciar</button>
     </div>
 
     <!-- integrando JS externo -->

@@ -104,6 +104,27 @@ body {
   /* definindo a animação de pulo, criada abaixo, rodando em 0.5s com um efeito de ease-out */
 }
 
+#restart {
+  display: none;
+  position: absolute;
+  /* para que os itens não "esbarrem" entre si */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* para centralizar o botão na tela */
+
+  background-color: #ddd;
+  /* cor de fundo do botão */
+  color: #171717;
+  /* cor do texto do botão */
+  border-radius: 10px;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  font-size: 2em;
+}
+
 @keyframes mov-tubo {
 
   /* keyframe referente a criação da animação do tubo */

@@ -39,12 +39,20 @@ const loop = setInterval(()=>{ // gerando um looping para o "game-over", que exe
     mario.src = 'img/game-over.png';
     mario.style.width = '75px';
     mario.style.marginLeft = '15px';
-    
 
+    const nuvens = document.querySelector('.nuvens'); // coletando as nuvens
+    nuvens.style.animation = 'none'; // parando a animação das nuvens
+    
     clearInterval(loop); // parando o looping
+
+    // colocando o botão de reiniciar o jogo
+    const btnReiniciar = document.querySelector('#restart'); // criando um botão de reiniciar o jogo
+    btnReiniciar.style.display = 'block'; // o botão de reiniciar será mostrado
+    btnReiniciar.addEventListener('click', () => { // gerando um evento de click no botão de reiniciar
+      location.reload(); // o jogo será reiniciado ao clicar no botão
+    });
   }
 
 },10); // intervalo de 10ms do looping
 
 document.addEventListener('keydown', pular); // gerando o evento que fará com que, quando pressionada qualquer tecla (keydown), a função de pulo será acionada
-
